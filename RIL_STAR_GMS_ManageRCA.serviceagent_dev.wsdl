@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by TIBCO WSDL-->
+<wsdl:definitions xmlns:ns0="http://www.ril.com/STAR/XSD/GMS/ManageRCA/insertUserRecordRequest.xsd" xmlns:ns2="http://www.ril.com/CLE_AddOn/SharedResources/FaultMessage.xsd" xmlns:ns1="http://www.ril.com/STAR/XSD/GMS/ManageRCA/insertUserRecordResponse.xsd" xmlns:ns4="http://www.ril.com/STAR/XSD/GMS/ManageRCA/createAndUpdateRCA_Response.xsd" xmlns:ns3="http://www.ril.com/STAR/XSD/GMS/ManageRCA/updateRCA_Request.xsd" xmlns:ns6="http://www.ril.com/STAR/XSD/GMS/ManageRCA/sendCompletedRCA_Response.xsd" xmlns:ns5="http://www.ril.com/STAR/XSD/GMS/ManageRCA/sendCompletedRCA_Request.xsd" xmlns:ns8="http://www.ril.com/STAR/XSD/GMS/ManageRCA/reworkRCA_Response.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns7="http://www.ril.com/STAR/XSD/GMS/ManageRCA/reworkRCA_Request.xsd" xmlns:ns9="http://www.ril.com/STAR/XSD/GMS/ManageRCA/createRCA_Request.xsd" xmlns:tns="http://xmlns.example.com/1358418819441" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="Untitled" targetNamespace="http://xmlns.example.com/1358418819441">
+    <wsdl:types>
+        <xs:schema xmlns="http://www.ril.com/STAR/XSD/GMS/ManageRCA/insertUserRecordRequest.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ril.com/STAR/XSD/GMS/ManageRCA/insertUserRecordRequest.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="insertUserRecordRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="insertUserRecord" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="DomainID" type="xs:string" minOccurs="0"/>
+                                    <xs:element name="UserID" type="xs:string" minOccurs="0"/>
+                                    <xs:element name="IM_No" type="xs:string" minOccurs="0"/>
+                                    <xs:element name="DateTime" type="xs:string" minOccurs="0"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.ril.com/STAR/XSD/GMS/ManageRCA/sendCompletedRCA_Response.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ril.com/STAR/XSD/GMS/ManageRCA/sendCompletedRCA_Response.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="sendCompletedRCA_Response">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Status">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="1"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="Messages" type="xs:string" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.ril.com/STAR/XSD/GMS/ManageRCA/createAndUpdateRCA_Response.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ril.com/STAR/XSD/GMS/ManageRCA/createAndUpdateRCA_Response.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="createAndUpdateRCA_Response">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ZMER_RCA_ID" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="50"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="Messages" type="xs:string" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.ril.com/STAR/XSD/GMS/ManageRCA/insertUserRecordResponse.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ril.com/STAR/XSD/GMS/ManageRCA/insertUserRecordResponse.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="insertUserRecordResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="insertUserRecord" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Message" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.ril.com/STAR/XSD/GMS/ManageRCA/sendCompletedRCA_Request.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ril.com/STAR/XSD/GMS/ManageRCA/sendCompletedRCA_Request.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="sendCompletedRCA_Request">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="MI_AN_ANALY_ID_CHR">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="255"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="URLOfLogicTree">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="RCAHypothesis" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="HypothesisID">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:minLength value="1"/>
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="MI_RCA_HYPOT_LABEL_CHR">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:minLength value="1"/>
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="CC_RCA_HYPOT_DETAI_C" minOccurs="0">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:maxLength value="4000"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="MI_RCA_HYPOT_STATE_CHR">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:minLength value="1"/>
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="CC_RCA_HYPOT_CAUSE_C" minOccurs="0">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="CC_RCA_HYPOT_CAUSE_GRP_C" minOccurs="0">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="CC_RCA_HYPOT_OBJ_PART_C" minOccurs="0">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="CC_RCA_HYPOT_OBJ_GRP_C" minOccurs="0">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="CC_RCA_HYPOT_DAMAG_C" minOccurs="0">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="CC_RCA_HYPOT_DAMAG_GRP_C" minOccurs="0">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Recommendations" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="MI_REC_SHORT_DESCR_CHR">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:minLength value="1"/>
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="MI_REC_LONG_DESCR_TX">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:minLength value="1"/>
+                                                <xs:maxLength value="4000"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="MI_RCA_RECOM_CAUSE_CHR">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:minLength value="1"/>
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="MI_RCA_RECOM_CAUSE_TYPE_CHR">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:minLength value="1"/>
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="MI_REC_LOC_ID_CHR" minOccurs="0">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="MI_REC_ASSET_ID_CHR" minOccurs="0">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="RecommendationID">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:minLength value="1"/>
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="MI_REC_TARGE_COMPL_DATE_DT" type="xs:date"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="SAPSystemID">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="50"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.ril.com/STAR/XSD/GMS/ManageRCA/reworkRCA_Request.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ril.com/STAR/XSD/GMS/ManageRCA/reworkRCA_Request.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="reworkRCA_Requests">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="EHSSD_INC_ROOT-ID">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="20"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="EHSSD_INC_ROOT-ZFLG_REWORK">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="1"/>
+                                    <xs:minLength value="1"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.ril.com/STAR/XSD/GMS/ManageRCA/reworkRCA_Response.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ril.com/STAR/XSD/GMS/ManageRCA/reworkRCA_Response.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="reworkRCA_Response">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Messages" type="xs:string" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.ril.com/STAR/XSD/GMS/ManageRCA/createRCA_Request.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ril.com/STAR/XSD/GMS/ManageRCA/createRCA_Request.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="createRCA_Requests">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="EHSSD_INC_ROOT-ID">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="20"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="IncidentDescription">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="EHSSD_INC_BINFA-TITLE">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="EHHSSD_INC_FTRAN-FIN_TRANS_AMNT">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:integer">
+                                    <xs:totalDigits value="15"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PlantDescription">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="30"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZUNIT">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="30"/>
+                                    <xs:minLength value="1"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="EHHSSD_INC_EQU-FUNC_LOC_ID" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="40"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="EHHSSD_INC_EQU-ID" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="18"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="EHHSSD_INC_INSTP-DEADLINE_DATE">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:date"/>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="MainRisk">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="40"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="RCA_IM_SAP_FLAG_F">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="1"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="EHHSD_INC_BINFA-START_TIMESTAMP">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:dateTime"/>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_01">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                    <xs:minLength value="1"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_02" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_03" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_04" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_05" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_06" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_07" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_08" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_09" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_10" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_11" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_12" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_13" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_14" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_15" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="SYSID">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="8"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="EHHSSD_INC_INSTP-EXECUTOR_ID">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.ril.com/CLE_AddOn/SharedResources/FaultMessage.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ril.com/CLE_AddOn/SharedResources/FaultMessage.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="FaultMessage">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="TransactionID" type="xs:string"/>
+                        <xs:element name="CorrelationID" type="xs:string"/>
+                        <xs:element name="InterfaceID" type="xs:string"/>
+                        <xs:element name="ErrorCode" type="xs:string"/>
+                        <xs:element name="ErrorDesc" type="xs:string"/>
+                        <xs:element name="ErrorStackTrace" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.ril.com/STAR/XSD/GMS/ManageRCA/updateRCA_Request.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ril.com/STAR/XSD/GMS/ManageRCA/updateRCA_Request.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="updateRCA_Requests">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="EHSSD_INC_ROOT-ID">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="20"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="IncidentDescription">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="EHSSD_INC_BINFA-TITLE">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="EHHSSD_INC_FTRAN-FIN_TRANS_AMNT">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:integer">
+                                    <xs:totalDigits value="15"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PlantDescription">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="30"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZUNIT">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="30"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="EHHSSD_INC_EQU-FUNC_LOC_ID" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="40"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="EHHSSD_INC_EQU-ID" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="18"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="EHHSSD_INC_INSTP-DEADLINE_DATE">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:date"/>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="MainRisk">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="40"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="RCA_IM_SAP_FLAG_F">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="1"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="EHHSD_INC_BINFA-START_TIMESTAMP">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:dateTime"/>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_01">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                    <xs:minLength value="1"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_02" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_03" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_04" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_05" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_06" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_07" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_08" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_09" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_10" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_11" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_12" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_13" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_14" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ZRIL_IM_TEAM_15" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="SYSID" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="8"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="RCA_UPDATE_FLAG">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="1"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="EHHSSD_INC_INSTP-EXECUTOR_ID">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="80"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+  <wsdl:message name="insertUserRecord_Request">
+    <wsdl:part name="insertUserRecord_Request" element="ns0:insertUserRecordRequest"/>
+  </wsdl:message>
+  <wsdl:message name="insertUserRecord_Response">
+    <wsdl:part name="insertUserRecord_Response" element="ns1:insertUserRecordResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ManagegeRCAFault">
+    <wsdl:part name="ManagegeRCAFault" element="ns2:FaultMessage"/>
+  </wsdl:message>
+  <wsdl:message name="updatedRCA_Request">
+    <wsdl:part name="updatedRCA_Request" element="ns3:updateRCA_Requests"/>
+  </wsdl:message>
+  <wsdl:message name="updateRCA_Response">
+    <wsdl:part name="updateRCA_Response" element="ns4:createAndUpdateRCA_Response"/>
+  </wsdl:message>
+  <wsdl:message name="sendCompletedRCA_Request">
+    <wsdl:part name="sendCompletedRCA_Request" element="ns5:sendCompletedRCA_Request"/>
+  </wsdl:message>
+  <wsdl:message name="sendCompleted_Response">
+    <wsdl:part name="sendCompleted_Response" element="ns6:sendCompletedRCA_Response"/>
+  </wsdl:message>
+  <wsdl:message name="reworkRCA_Request">
+    <wsdl:part name="reworkRCA_Request" element="ns7:reworkRCA_Requests"/>
+  </wsdl:message>
+  <wsdl:message name="reworkRCA_Response">
+    <wsdl:part name="reworkRCA_Response" element="ns8:reworkRCA_Response"/>
+  </wsdl:message>
+  <wsdl:message name="createRCA_Request">
+    <wsdl:part name="createRCA_Request" element="ns9:createRCA_Requests"/>
+  </wsdl:message>
+  <wsdl:message name="createRCA_Response">
+    <wsdl:part name="createRCA_Response" element="ns4:createAndUpdateRCA_Response"/>
+  </wsdl:message>
+    <wsdl:portType name="ManageRCA">
+        <wsdl:operation name="insertUserRecord">
+            <wsdl:input message="tns:insertUserRecord_Request"/>
+            <wsdl:output message="tns:insertUserRecord_Response"/>
+            <wsdl:fault name="fault1" message="tns:ManagegeRCAFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateRCA">
+            <wsdl:input message="tns:updatedRCA_Request"/>
+            <wsdl:output message="tns:updateRCA_Response"/>
+            <wsdl:fault name="fault1" message="tns:ManagegeRCAFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="sendCompletedRCA">
+            <wsdl:input message="tns:sendCompletedRCA_Request"/>
+            <wsdl:output message="tns:sendCompleted_Response"/>
+            <wsdl:fault name="fault1" message="tns:ManagegeRCAFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="reworkRCA">
+            <wsdl:input message="tns:reworkRCA_Request"/>
+            <wsdl:output message="tns:reworkRCA_Response"/>
+            <wsdl:fault name="fault1" message="tns:ManagegeRCAFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="createRCA">
+            <wsdl:input message="tns:createRCA_Request"/>
+            <wsdl:output message="tns:createRCA_Response"/>
+            <wsdl:fault name="fault1" message="tns:ManagegeRCAFault"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ManageRCAEndpointBinding" type="tns:ManageRCA">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="insertUserRecord">
+            <soap:operation style="document" soapAction="/GMS/ManageRCA/BusinessService/Services/RIL_STAR_GMS_ManageRCA.serviceagent//insertUserRecord"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="insertUserRecord_Request"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="insertUserRecord_Response"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateRCA">
+            <soap:operation style="document" soapAction="/GMS/ManageRCA/BusinessService/Services/RIL_STAR_GMS_ManageRCA.serviceagent/ManageRCAEndpoint1/updateRCA"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="updatedRCA_Request"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="updateRCA_Response"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="sendCompletedRCA">
+            <soap:operation style="document" soapAction="/GMS/ManageRCA/BusinessService/Services/RIL_STAR_GMS_ManageRCA.serviceagent/ManageRCAEndpoint1/sendCompletedRCA"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="sendCompletedRCA_Request"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="sendCompleted_Response"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="reworkRCA">
+            <soap:operation style="document" soapAction="/GMS/ManageRCA/BusinessService/Services/RIL_STAR_GMS_ManageRCA.serviceagent/ManageRCAEndpoint1/reworkRCA"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="reworkRCA_Request"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="reworkRCA_Response"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createRCA">
+            <soap:operation style="document" soapAction="/GMS/ManageRCA/BusinessService/Services/RIL_STAR_GMS_ManageRCA.serviceagent/ManageRCAEndpoint1/createRCA"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="createRCA_Request"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="createRCA_Response"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+  <wsdl:service name="RIL_STAR_GMS_ManageRCA.serviceagent">
+    <wsdl:port name="ManageRCAEndpoint" binding="tns:ManageRCAEndpointBinding">
+      <soap:address location="http://10.128.26.113:9316/GMS/ManageRCA/BusinessService/Services/RIL_STAR_GMS_ManageRCA.serviceagent/ManageRCAEndpoint"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

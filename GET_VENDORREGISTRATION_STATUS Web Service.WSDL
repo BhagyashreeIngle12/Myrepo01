@@ -1,0 +1,204 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0101)http://10.21.6.42/sites/Get_VendorRegistrationStatus/GET_VENDORREGISTRATION_STATUS.asmx -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>GET_VENDORREGISTRATION_STATUS Web Service</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type><LINK 
+rel=alternate type=text/xml 
+href="/sites/Get_VendorRegistrationStatus/GET_VENDORREGISTRATION_STATUS.asmx?disco">
+<STYLE type=text/css>BODY {
+	FONT-FAMILY: Verdana; COLOR: #000000; MARGIN-LEFT: 0px; MARGIN-TOP: 0px; BACKGROUND-COLOR: white
+}
+#content {
+	FONT-SIZE: 0.7em; PADDING-BOTTOM: 2em; MARGIN-LEFT: 30px
+}
+A:link {
+	TEXT-DECORATION: underline; FONT-WEIGHT: bold; COLOR: #336699
+}
+A:visited {
+	TEXT-DECORATION: underline; FONT-WEIGHT: bold; COLOR: #6699cc
+}
+A:active {
+	TEXT-DECORATION: underline; FONT-WEIGHT: bold; COLOR: #336699
+}
+A:hover {
+	TEXT-DECORATION: underline; FONT-WEIGHT: bold; COLOR: #cc3300
+}
+P {
+	MARGIN-BOTTOM: 12px; FONT-FAMILY: Verdana; COLOR: #000000; MARGIN-TOP: 0px
+}
+PRE {
+	FONT-SIZE: x-small; BORDER-TOP: #f0f0e0 1px solid; FONT-FAMILY: Courier New; BORDER-RIGHT: #f0f0e0 1px solid; BORDER-BOTTOM: #f0f0e0 1px solid; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; PADDING-LEFT: 5px; BORDER-LEFT: #f0f0e0 1px solid; MARGIN-TOP: -5px; PADDING-RIGHT: 5px; BACKGROUND-COLOR: #e5e5cc
+}
+TD {
+	FONT-SIZE: 0.7em; FONT-FAMILY: Verdana; COLOR: #000000
+}
+H2 {
+	MARGIN-BOTTOM: 10px; FONT-SIZE: 1.5em; BORDER-TOP: #003366 1px solid; FONT-WEIGHT: bold; COLOR: #003366; MARGIN-LEFT: -15px; MARGIN-TOP: 25px
+}
+H3 {
+	MARGIN-BOTTOM: 10px; FONT-SIZE: 1.1em; COLOR: #000000; MARGIN-LEFT: -15px; MARGIN-TOP: 10px
+}
+UL {
+	MARGIN-LEFT: 20px; MARGIN-TOP: 10px
+}
+OL {
+	MARGIN-LEFT: 20px; MARGIN-TOP: 10px
+}
+LI {
+	COLOR: #000000; MARGIN-TOP: 10px
+}
+FONT.value {
+	FONT-WEIGHT: bold; COLOR: darkblue
+}
+FONT.key {
+	FONT-WEIGHT: bold; COLOR: darkgreen
+}
+FONT.error {
+	FONT-WEIGHT: bold; COLOR: darkred
+}
+.heading1 {
+	MARGIN-BOTTOM: 0px; FONT-SIZE: 26px; FONT-FAMILY: Tahoma; WIDTH: 105%; FONT-WEIGHT: normal; COLOR: #ffffff; PADDING-BOTTOM: 3px; PADDING-TOP: 10px; PADDING-LEFT: 15px; MARGIN-LEFT: -30px; MARGIN-TOP: 0px; BACKGROUND-COLOR: #003366
+}
+.button {
+	FONT-SIZE: 1em; BORDER-TOP: #cccccc 1px solid; FONT-FAMILY: Verdana; BORDER-RIGHT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid; BORDER-LEFT: #cccccc 1px solid; BACKGROUND-COLOR: #dcdcdc
+}
+.frmheader {
+	FONT-SIZE: 0.7em; FONT-FAMILY: Verdana; BACKGROUND: #dcdcdc; BORDER-BOTTOM: #dcdcdc 1px solid; FONT-WEIGHT: normal; COLOR: #000000; PADDING-BOTTOM: 2px; PADDING-TOP: 2px
+}
+.frmtext {
+	MARGIN-BOTTOM: 0px; FONT-SIZE: 0.7em; FONT-FAMILY: Verdana; MARGIN-LEFT: 32px; MARGIN-TOP: 8px
+}
+.frmInput {
+	FONT-SIZE: 1em; FONT-FAMILY: Verdana
+}
+.intro {
+	MARGIN-LEFT: -15px
+}
+</STYLE>
+
+<META name=GENERATOR content="MSHTML 11.00.9600.18978"></HEAD>
+<BODY>
+<DIV id=content>
+<P class=heading1>GET_VENDORREGISTRATION_STATUS</P><BR><SPAN>
+<P class=intro>Click <A 
+href="http://10.21.6.42/sites/Get_VendorRegistrationStatus/GET_VENDORREGISTRATION_STATUS.asmx">here</A> 
+for a complete list of operations.</P>
+<H2>GET_STATUS</H2>
+<P class=intro></P>
+<H3>Test</H3>To test the operation using the HTTP POST protocol, click the 
+'Invoke' button. 
+<FORM method=post 
+action=http://10.21.6.42/sites/Get_VendorRegistrationStatus/GET_VENDORREGISTRATION_STATUS.asmx/GET_STATUS 
+target=_blank>
+<TABLE style="BORDER-COLLAPSE: collapse" borderColor=#dcdcdc cellSpacing=0 
+cellPadding=4 rules=none frame=box>
+  <TBODY>
+  <TR>
+    <TD class=frmHeader style="BORDER-RIGHT: white 2px solid" 
+    background=GET_VENDORREGISTRATION_STATUS%20Web%20Service_files/GET_VENDORREGISTRATION_STATUS.htm>Parameter</TD>
+    <TD class=frmHeader 
+    background=GET_VENDORREGISTRATION_STATUS%20Web%20Service_files/GET_VENDORREGISTRATION_STATUS.htm>Value</TD></TR>
+  <TR>
+    <TD class=frmText 
+style="FONT-WEIGHT: normal; COLOR: #000000">RequestID:</TD>
+    <TD><INPUT class=frmInput size=50 name=RequestID></TD></TR>
+  <TR>
+    <TD></TD>
+    <TD 
+align=right><INPUT class=button type=submit value=Invoke></TD></TR></TBODY></TABLE></FORM><SPAN>
+<H3>SOAP 1.1</H3>
+<P>The following is a sample SOAP 1.1 request and response. The <FONT 
+class=value>placeholders</FONT> shown need to be replaced with actual 
+values.</P><PRE>POST /sites/Get_VendorRegistrationStatus/GET_VENDORREGISTRATION_STATUS.asmx HTTP/1.1
+Host: 10.21.6.42
+Content-Type: text/xml; charset=utf-8
+Content-Length: <FONT class=value>length</FONT>
+SOAPAction: "http://tempuri.org/GET_STATUS"
+
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;soap:Body&gt;
+    &lt;GET_STATUS xmlns="http://tempuri.org/"&gt;
+      &lt;RequestID&gt;<FONT class=value>string</FONT>&lt;/RequestID&gt;
+    &lt;/GET_STATUS&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</PRE><PRE>HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Content-Length: <FONT class=value>length</FONT>
+
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;soap:Body&gt;
+    &lt;GET_STATUSResponse xmlns="http://tempuri.org/"&gt;
+      &lt;GET_VENDORREGISTRATION_STATUS&gt;
+        &lt;Flag&gt;<FONT class=value>string</FONT>&lt;/Flag&gt;
+        &lt;Message&gt;<FONT class=value>string</FONT>&lt;/Message&gt;
+        &lt;Result&gt;<FONT class=value>xml</FONT>&lt;/Result&gt;
+      &lt;/GET_VENDORREGISTRATION_STATUS&gt;
+    &lt;/GET_STATUSResponse&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</PRE></SPAN><SPAN>
+<H3>SOAP 1.2</H3>
+<P>The following is a sample SOAP 1.2 request and response. The <FONT 
+class=value>placeholders</FONT> shown need to be replaced with actual 
+values.</P><PRE>POST /sites/Get_VendorRegistrationStatus/GET_VENDORREGISTRATION_STATUS.asmx HTTP/1.1
+Host: 10.21.6.42
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: <FONT class=value>length</FONT>
+
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
+  &lt;soap12:Body&gt;
+    &lt;GET_STATUS xmlns="http://tempuri.org/"&gt;
+      &lt;RequestID&gt;<FONT class=value>string</FONT>&lt;/RequestID&gt;
+    &lt;/GET_STATUS&gt;
+  &lt;/soap12:Body&gt;
+&lt;/soap12:Envelope&gt;</PRE><PRE>HTTP/1.1 200 OK
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: <FONT class=value>length</FONT>
+
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
+  &lt;soap12:Body&gt;
+    &lt;GET_STATUSResponse xmlns="http://tempuri.org/"&gt;
+      &lt;GET_VENDORREGISTRATION_STATUS&gt;
+        &lt;Flag&gt;<FONT class=value>string</FONT>&lt;/Flag&gt;
+        &lt;Message&gt;<FONT class=value>string</FONT>&lt;/Message&gt;
+        &lt;Result&gt;<FONT class=value>xml</FONT>&lt;/Result&gt;
+      &lt;/GET_VENDORREGISTRATION_STATUS&gt;
+    &lt;/GET_STATUSResponse&gt;
+  &lt;/soap12:Body&gt;
+&lt;/soap12:Envelope&gt;</PRE></SPAN><SPAN>
+<H3>HTTP GET</H3>
+<P>The following is a sample HTTP GET request and response. The <FONT 
+class=value>placeholders</FONT> shown need to be replaced with actual 
+values.</P><PRE>GET /sites/Get_VendorRegistrationStatus/GET_VENDORREGISTRATION_STATUS.asmx/GET_STATUS?<FONT class=key>RequestID</FONT>=<FONT class=value>string</FONT> HTTP/1.1
+Host: 10.21.6.42
+</PRE><PRE>HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Content-Length: <FONT class=value>length</FONT>
+
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;GET_VENDORREGISTRATION_STATUS xmlns="http://tempuri.org/"&gt;
+  &lt;Flag&gt;<FONT class=value>string</FONT>&lt;/Flag&gt;
+  &lt;Message&gt;<FONT class=value>string</FONT>&lt;/Message&gt;
+  &lt;Result&gt;<FONT class=value>xml</FONT>&lt;/Result&gt;
+&lt;/GET_VENDORREGISTRATION_STATUS&gt;</PRE></SPAN><SPAN>
+<H3>HTTP POST</H3>
+<P>The following is a sample HTTP POST request and response. The <FONT 
+class=value>placeholders</FONT> shown need to be replaced with actual 
+values.</P><PRE>POST /sites/Get_VendorRegistrationStatus/GET_VENDORREGISTRATION_STATUS.asmx/GET_STATUS HTTP/1.1
+Host: 10.21.6.42
+Content-Type: application/x-www-form-urlencoded
+Content-Length: <FONT class=value>length</FONT>
+
+<FONT class=key>RequestID</FONT>=<FONT class=value>string</FONT></PRE><PRE>HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Content-Length: <FONT class=value>length</FONT>
+
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;GET_VENDORREGISTRATION_STATUS xmlns="http://tempuri.org/"&gt;
+  &lt;Flag&gt;<FONT class=value>string</FONT>&lt;/Flag&gt;
+  &lt;Message&gt;<FONT class=value>string</FONT>&lt;/Message&gt;
+  &lt;Result&gt;<FONT class=value>xml</FONT>&lt;/Result&gt;
+&lt;/GET_VENDORREGISTRATION_STATUS&gt;</PRE></SPAN></SPAN></DIV></BODY></HTML>
